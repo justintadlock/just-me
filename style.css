@@ -1,0 +1,373 @@
+/**
+ * Theme Name: Just Me
+ * Theme URI: http://themehybrid.com/themes/just-me
+ * Description: Description goes here.
+ * Version: 0.1 Alpha
+ * Author: Justin Tadlock
+ * Author URI: http://justintadlock.com
+ * Tags: theme-options, threaded-comments, microformats, translation-ready, rtl-language-support, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, sticky-post, custom-background
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Documentation URI: http://themehybrid.com/docs
+ * Support URI: http://themehybrid.com/support
+ */
+
+/* 25px base */
+/*html,body,div,span,object,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;vertical-align:baseline;outline:none;font-size:100%;background:transparent;border:none;text-decoration:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,i,hr,u,center,menu,layer,s,strike,font,xmp{margin:0;padding:0;vertical-align:baseline;outline:none;font-size:100%;font-weight:normal;font-style:normal;background:transparent;border:none;text-decoration:none}body{line-height:25px;font-family:Georgia,Times,"Times New Roman",serif;color:#333;background:#fff}h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:normal;margin:0 0 25px 0}h1{font-size:1.8em}h2{font-size:1.7em}h3{font-size:1.55em}h4{font-size:1.4em}h5{font-size:1.25em}h6{font-size:1.1em}p{margin:0 0 25px 0}ol,ul{list-style:none}ul{list-style:disc;margin:0 0 25px 2.5em}ol{list-style-type:decimal;margin:0 0 25px 3em}ol ol{list-style:upper-roman}ol ol ol{list-style:lower-roman}ol ol ol ol{list-style:upper-alpha}ol ol ol ol ol{list-style:lower-alpha}ul ul,ol ol,ul ol,ol ul{margin-bottom:0}dl{margin:0 0 25px 5px}dl dt{font-weight:bold;margin:10px 0 0 0}dl dd{margin:5px 0 0 1.5em}strong{font-weight:bold}strong strong{font-weight:normal}em,cite{font-style:italic}em em,cite cite{font-style:normal}abbr{cursor:help}acronym{text-transform:uppercase;border-bottom:1px dashed #666;cursor:help}big{font-size:120%}small,sup,sub{font-size:80%}sup{vertical-align:baseline;position:relative;bottom:0.3em}sub{vertical-align:baseline;position:relative;top:0.3em}address{font-style:italic;margin:0 0 25px 0}li address,dd address{margin:0}blockquote{margin:0 25px;font-style:normal}blockquote em,blockquote cite{font-style:italic}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{cursor:pointer}a img{border:none}pre{overflow:auto;font:.9em Monaco,monospace,Courier,"Courier New";line-height:25px;margin-bottom:25px;padding:10px}code{font:.9em Monaco,monospace,Courier,"Courier New"}pre code{font-size:1em}ins,dfn{font-style:italic;text-decoration:none;border-bottom:1px solid #666}del,s,strike{text-decoration:line-through}object{margin-bottom:25px}input,textarea{font-size:1em;padding:3px}input[type="submit"]{cursor:pointer}:focus{outline:none}form label{cursor:pointer}option{padding:1px 2px}table{border-collapse:collapse;border-spacing:0;margin-bottom:25px}th,td{text-align:left}hr{height:1px;margin-bottom:25px;background:#333}img.wp-smiley{max-height:12px;margin:0;padding:0;border:none}.gallery{display:block;text-align:center;margin-bottom:25px}.alignleft,.left{float:left;margin-right:20px}.alignright,.right{float:right;margin-left:20px}.aligncenter,.center{display:block;margin:0 auto 25px auto}.alignnone,.block{clear:both;margin:0 0 25px 0}.clear{clear:both}img.alignleft,img.alignright{display:inline}blockquote.alignleft,blockquote.alignright{width:33%}
+*/
+
+html,body,div,span,object,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;vertical-align:baseline;outline:none;font-size:100%;background:transparent;border:none;text-decoration:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,i,hr,u,center,menu,layer,s,strike,font,xmp{margin:0;padding:0;vertical-align:baseline;outline:none;font-size:100%;font-weight:normal;font-style:normal;background:transparent;border:none;text-decoration:none}
+
+
+
+@font-face {
+	font-family: 'LatoBlack';
+	src: url('fonts/lato/Lato-Bla-webfont.eot');
+	src: url('fonts/lato/Lato-Bla-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/lato/Lato-Bla-webfont.woff') format('woff'),
+		url('fonts/lato/Lato-Bla-webfont.ttf') format('truetype'),
+		url('fonts/lato/Lato-Bla-webfont.svg#LatoBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'LatoLight';
+    src: url('fonts/lato/Lato-Lig-webfont.eot');
+    src: url('fonts/lato/Lato-Lig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato/Lato-Lig-webfont.woff') format('woff'),
+         url('fonts/lato/Lato-Lig-webfont.ttf') format('truetype'),
+         url('fonts/lato/Lato-Lig-webfont.svg#LatoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+body {
+	font: normal normal normal 100%/1.5 Georgia, serif;
+	color: #454545;
+	background: #eee url(images/utility-bg.png);
+	}
+
+
+p,ol,ul,
+h1,h2,h3,h4,h5,h6,
+pre {
+	margin: 1.5em 0;
+	}
+a {
+	text-decoration: underline;
+	}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'LatoLight';
+	font-weight: normal;
+	color: #000;
+	}
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.45rem; }
+h5 { font-size: 1.3rem; }
+h6 { font-size: 1.15rem; }
+.entry-content {
+	font-size: 1.125rem;
+	}
+
+
+p {
+	}
+
+ul li,
+ol li {
+	margin: .3125em 0;
+	}
+
+blockquote {
+	margin: 0 1.5625em;
+	font-size: 1.1em;
+	font-style: italic;
+	color: #999;
+	}
+
+pre {
+	overflow: auto;
+	padding: 1.5625em;
+	line-height: 25px; /* Using exact pixels here to have a definite bg match. */
+	background: #fafafa url(images/pre-bg.png);
+	border: 1px solid #ddd;
+	border-left: .3125em solid #ee8a09;
+	border-left: .625em solid #f99401;
+	}
+code {
+	font-size: 1rem;
+	font-family: Monaco, monospace, Courier, "Courier New";
+	color: #000;
+	background: #f3f3f3;
+	}
+pre code {
+	padding: 0.325em;
+	font-size: .75rem;
+	background: transparent;
+	}
+
+/* Images */
+
+.hentry img {
+	max-width: 100%;
+	height: auto;
+	padding: 1.5625em;
+	padding: 5%;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	}
+.hentry .thumbnail {
+	float: right;
+	margin: 0 0 1.5625em 1.5625em;
+	padding: 1.5%;
+	box-sizing: content-box;
+	}
+
+.hentry .aligncenter {
+	display: block;
+	margin: 0 auto 1.5625em auto;
+	}
+.hentry .alignleft {
+	float: left;
+	margin: 0 0 0 -1.5625em;
+	}
+.hentry .alignright {
+	float: right;
+	margin: 0 -1.5625em 0 0;
+	}
+
+
+/* Captions */
+.wp-caption {
+	position: relative;
+	max-width: 100%;
+	}
+.wp-caption img {
+	margin: 0;
+	}
+.wp-caption-text {
+	margin-top: 0;
+	font-style: italic;
+	text-align: center;
+	color: #a3a3a3;
+	}
+.wp-caption-text a {
+	font-style: normal;
+	}
+
+
+/* \Images */
+
+/* \layout */
+/*****************************************************************************/
+
+
+#header {
+	/*position: fixed;*/
+	position: absolute;
+	top: 0;
+	}
+.admin-bar #header {
+	top: 28px;
+	}
+#header,
+#footer {
+	width: 100%;
+	padding: .78125em 0;
+	background: #000;
+	opacity: 0.9;
+	}
+
+
+#site-title {
+	display: inline;
+	margin: 0 0.625em 0 0;
+	font-size: 1.125rem;
+	font-family: 'LatoBlack';
+	}
+#site-title a {
+	color: #f6f6f6;
+	text-decoration: none;
+	}
+#site-title a:hover {
+	text-decoration: underline;
+	}
+#site-description {
+	vertical-align: middle;
+	display: inline;
+	margin: 0;
+	font-family: 'LatoLight';
+	font-size: 0.875rem;
+	color: #e3e3e3;
+	}
+
+/* Breadcrumbs */
+.breadcrumbs {
+	position: relative;
+	top: -3em;
+	}
+
+/* Posts */
+
+
+.hentry {
+	margin: 0 0 3.125em;
+	padding: 4.6875em 4.6875em 3.9375em;
+	padding: 6.25em 6.25em 3.9375em;
+	padding: 3.125em 6.25em;
+	padding: 5.46875em;
+	padding: 10%;
+	font-size: 1em;
+	background: #fff; /* need bg */
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 2px #a3a3a3;
+	}
+.hentry:nth-child(even) {
+	background: #f9f9f9;
+	}
+
+.entry-title {
+	margin: 0 0 .25em 0;
+	font-family: 'LatoLight';
+	}
+.entry-title a {
+	color: #232323;
+	}
+.entry-title a:hover {
+	color: #000;
+	}
+
+.byline,
+.entry-meta {
+	position: relative;
+	left: -.3125em;
+	width: 100%;
+	font-size: 0.75rem;
+	font-style: italic;
+	color: #aaa;
+	}
+
+.byline {
+	margin: 0 0 1.5em;
+	padding: 0 .3125em 1.5em;
+	border-bottom: 1px solid #ddd;
+	}
+.entry-meta {
+	clear: both;
+	padding: 1.5em .3125em 0;
+	border-top: 1px solid #ddd;
+	}
+.entry-meta .category {
+	float: left;
+	max-width: 50%;
+	}
+.entry-meta .post_tag {
+	float: right;
+	max-width: 50%;
+	text-align: right;
+	}
+.byline a,
+.entry-meta a {
+	font-style: normal;
+	color: #434343;
+	}
+.byline a:hover,
+.entry-meta a:hover {
+	color: #000;
+	}
+
+.byline abbr {
+	font-size: 1rem;
+	font-style: normal;
+	font-variant: small-caps;
+	color: #838383;
+	border-bottom: 1px dotted #ccc;
+	cursor: help;
+	}
+
+.entry-summary {
+	font-size: 1.25em;
+	color: #777;
+	}
+.entry-content {
+	font-size: 1.25em;
+	color: #777;
+	}
+
+
+#footer {
+	padding: 0;
+	}
+#footer .wrap {
+	}
+.footer-content {
+	overflow: hidden;
+	font-size: 0.875rem;
+	font-family: 'LatoLight';
+	color: #e9e9e9;
+	}
+.footer-content a {
+	font-family: 'LatoBlack';
+	color: #f6f6f6;
+	text-decoration: none;
+	}
+.footer-content a:hover {
+	text-decoration: underline;
+	}
+
+.footer-content .copyright {
+	float: left;
+	width: 50%;
+	}
+.footer-content .credit {
+	float: right;
+	width: 50%;
+	text-align: right;
+	}
+
+
+
+
+/****************************************************************************/
+/* Layout */
+
+
+#header .wrap,
+#footer .wrap,
+#main {
+	width: 75%;
+	max-width: 61.25em;
+	min-width: 23.75em;
+	margin: 0 auto;
+	}
+#main {
+	margin-top: 6.25em;
+	}
+
+@media only screen and (max-width: 550px) {
+
+	#site-title, #site-description {
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
