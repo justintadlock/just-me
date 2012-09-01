@@ -15,28 +15,32 @@
 
 do_atomic( 'before_entry' ); // my-life_before_entry ?>
 
-<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
 
 	<?php do_atomic( 'open_entry' ); // my-life_open_entry ?>
 
 	<?php if ( is_singular() ) { ?>
 
-		<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title">', '</h1>', false ) ); ?>
-
-		<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'Published on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'my-life' ) . '</div>' ); ?>
+		<header class="entry-header">
+			<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title">', '</h1>', false ) ); ?>
+			<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'Article published on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'my-life' ) . '</div>' ); ?>
+		</header>
 
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'my-life' ), 'after' => '</p>' ) ); ?>
 		</div><!-- .entry-content -->
 
-		<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms before="Tagged "]', 'my-life' ) . '</div>' ); ?>
+		<footer class="entry-footer">
+			<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms before="Tagged "]', 'my-life' ) . '</div>' ); ?>
+		</footer><!-- .entry-footer -->
 
 	<?php } else { ?>
 
-		<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>', false ) ); ?>
-
-		<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'Published on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'my-life' ) . '</div>' ); ?>
+		<header class="entry-header">
+			<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>', false ) ); ?>
+			<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'Article published on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'my-life' ) . '</div>' ); ?>
+		</header><!-- .entry-header -->
 
 		<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
 
@@ -45,12 +49,14 @@ do_atomic( 'before_entry' ); // my-life_before_entry ?>
 			<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'my-life' ), 'after' => '</p>' ) ); ?>
 		</div><!-- .entry-summary -->
 
-		<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms before="Tagged "]', 'my-life' ) . '</div>' ); ?>
+		<footer class="entry-footer">
+			<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms before="Tagged "]', 'my-life' ) . '</div>' ); ?>
+		</footer><!-- .entry-footer -->
 
 	<?php } ?>
 
 	<?php do_atomic( 'close_entry' ); // my-life_close_entry ?>
 
-</div><!-- .hentry -->
+</article><!-- .hentry -->
 
 <?php do_atomic( 'after_entry' ); // my-life_after_entry ?>

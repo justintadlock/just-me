@@ -34,11 +34,9 @@ get_header(); // Loads the header.php template. ?>
 
 					<?php if ( is_singular() ) { ?>
 
-						<?php if ( current_theme_supports( 'custom-field-series' ) ) custom_field_series(); ?>
-
 						<?php do_atomic( 'after_singular' ); // my-life_after_singular ?>
 
-						<?php comments_template( '/comments-test.php', true ); // Loads the comments.php template. ?>
+						<?php comments_template( '/comments.php', true ); // Loads the comments.php template. ?>
 
 					<?php } ?>
 

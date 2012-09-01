@@ -49,17 +49,22 @@ html,body,div,span,object,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,addr
 body {
 	font: normal normal normal 100%/1.5 Georgia, serif;
 	color: #454545;
-	background: #eee url(images/utility-bg.png);
+	color: #656565;
+	background: #f3f3f3 url(images/bg-yellow-stripe.png);
 	}
 
 
 p,ol,ul,
 h1,h2,h3,h4,h5,h6,
 pre {
-	margin: 1.5em 0;
+	margin: 0 0 25px 0;
 	}
 a {
+	color: #383838;
 	text-decoration: underline;
+	}
+a:hover {
+	color: #f63;
 	}
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'LatoLight';
@@ -72,8 +77,14 @@ h3 { font-size: 1.6rem; }
 h4 { font-size: 1.45rem; }
 h5 { font-size: 1.3rem; }
 h6 { font-size: 1.15rem; }
-.entry-content {
-	font-size: 1.125rem;
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+	margin: 37px 0;
 	}
 
 
@@ -82,24 +93,27 @@ p {
 
 ul li,
 ol li {
-	margin: .3125em 0;
+	margin: 5px 0;
+	}
+ul li::marker,
+ol li::marker {
+	color: #000;
 	}
 
 blockquote {
-	margin: 0 1.5625em;
-	font-size: 1.1em;
+	margin: 0 3.125em;
+	font-size: 1.25rem;
 	font-style: italic;
-	color: #999;
+	color: #aaa;
 	}
 
 pre {
 	overflow: auto;
-	padding: 1.5625em;
+	padding: 25px 1.5625em;
 	line-height: 25px; /* Using exact pixels here to have a definite bg match. */
 	background: #fafafa url(images/pre-bg.png);
 	border: 1px solid #ddd;
-	border-left: .3125em solid #ee8a09;
-	border-left: .625em solid #f99401;
+	border-left: .625em solid #f63;
 	}
 code {
 	font-size: 1rem;
@@ -118,7 +132,6 @@ pre code {
 .hentry img {
 	max-width: 100%;
 	height: auto;
-	padding: 1.5625em;
 	padding: 5%;
 	background: #fafafa;
 	border: 1px solid #ddd;
@@ -126,22 +139,22 @@ pre code {
 	}
 .hentry .thumbnail {
 	float: right;
-	margin: 0 0 1.5625em 1.5625em;
+	margin: 0 0 0 1.5625em;
 	padding: 1.5%;
 	box-sizing: content-box;
 	}
 
 .hentry .aligncenter {
 	display: block;
-	margin: 0 auto 1.5625em auto;
+	margin: 0 auto 25px auto;
 	}
 .hentry .alignleft {
 	float: left;
-	margin: 0 0 0 -1.5625em;
+	margin: 0 1.5625em 0 0;
 	}
 .hentry .alignright {
 	float: right;
-	margin: 0 -1.5625em 0 0;
+	margin: 0 0 0 1.5625em;
 	}
 
 
@@ -171,25 +184,29 @@ pre code {
 
 
 #header {
-	/*position: fixed;*/
-	position: absolute;
+	position: fixed;
 	top: 0;
 	}
 .admin-bar #header {
+	position: absolute;
 	top: 28px;
 	}
 #header,
 #footer {
 	width: 100%;
-	padding: .78125em 0;
-	background: #000;
+	/*padding: .78125em 0;*/
+	background: #080808;
 	opacity: 0.9;
+	}
+#footer {
+	position: fixed;
+	bottom: 0;
 	}
 
 
 #site-title {
-	display: inline;
-	margin: 0 0.625em 0 0;
+	display: inline-block;
+	margin: 15px 0.625em 15px 0;
 	font-size: 1.125rem;
 	font-family: 'LatoBlack';
 	}
@@ -202,47 +219,39 @@ pre code {
 	}
 #site-description {
 	vertical-align: middle;
-	display: inline;
-	margin: 0;
+	display: inline-block;
+	margin: 12px 0;
 	font-family: 'LatoLight';
 	font-size: 0.875rem;
 	color: #e3e3e3;
 	}
 
-/* Breadcrumbs */
-.breadcrumbs {
-	position: relative;
-	top: -3em;
-	}
 
 /* Posts */
 
 
-.hentry {
-	margin: 0 0 3.125em;
-	padding: 4.6875em 4.6875em 3.9375em;
-	padding: 6.25em 6.25em 3.9375em;
-	padding: 3.125em 6.25em;
-	padding: 5.46875em;
+.hentry,
+#comments-template {
+	margin: 0 0 50px;
 	padding: 10%;
-	font-size: 1em;
 	background: #fff; /* need bg */
 	border: 1px solid #ddd;
-	box-shadow: 2px 2px 2px #a3a3a3;
+	border-bottom-color: #555;
+	border-right-color: #555;
+	box-shadow: 5px 5px 3px #666;
 	}
 .hentry:nth-child(even) {
-	background: #f9f9f9;
 	}
 
 .entry-title {
-	margin: 0 0 .25em 0;
+	margin: 0 0 5px;
 	font-family: 'LatoLight';
 	}
 .entry-title a {
-	color: #232323;
+	color: #000;
 	}
 .entry-title a:hover {
-	color: #000;
+	color: #f63;
 	}
 
 .byline,
@@ -250,19 +259,19 @@ pre code {
 	position: relative;
 	left: -.3125em;
 	width: 100%;
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 	font-style: italic;
 	color: #aaa;
 	}
 
 .byline {
-	margin: 0 0 1.5em;
-	padding: 0 .3125em 1.5em;
+	margin: 0 0 20px;
+	padding: 0 .3125em 20px;
 	border-bottom: 1px solid #ddd;
 	}
 .entry-meta {
 	clear: both;
-	padding: 1.5em .3125em 0;
+	padding: 25px .3125em 0;
 	border-top: 1px solid #ddd;
 	}
 .entry-meta .category {
@@ -277,14 +286,15 @@ pre code {
 .byline a,
 .entry-meta a {
 	font-style: normal;
-	color: #434343;
+	color: #383838;
 	}
 .byline a:hover,
 .entry-meta a:hover {
-	color: #000;
+	color: #f63;
 	}
 
-.byline abbr {
+.byline abbr,
+.entry-meta abbr {
 	font-size: 1rem;
 	font-style: normal;
 	font-variant: small-caps;
@@ -299,12 +309,20 @@ pre code {
 	}
 .entry-content {
 	font-size: 1.25em;
-	color: #777;
+	}
+
+
+/********* POST FORMATS **********/
+
+.format-status .avatar {
+	float: left;
+	margin: 0 1.5625em 0 0;
+	padding: 1.5%;
+	box-sizing: content-box;
 	}
 
 
 #footer {
-	padding: 0;
 	}
 #footer .wrap {
 	}
@@ -323,6 +341,9 @@ pre code {
 	text-decoration: underline;
 	}
 
+.footer-content p {
+	margin: 15px 0;
+	}
 .footer-content .copyright {
 	float: left;
 	width: 50%;
@@ -349,7 +370,7 @@ pre code {
 	margin: 0 auto;
 	}
 #main {
-	margin-top: 6.25em;
+	margin: 107px auto;
 	}
 
 @media only screen and (max-width: 550px) {
