@@ -38,7 +38,7 @@ do_atomic( 'before_entry' ); // my-life_before_entry ?>
 	<?php } else { ?>
 
 		<header class="entry-header">
-			<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>', false ) ); ?>
+			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
 			<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'Article published on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'my-life' ) . '</div>' ); ?>
 		</header><!-- .entry-header -->
 

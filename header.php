@@ -48,17 +48,19 @@
 					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</hgroup><!-- #branding -->
 
+				<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
+
 				<?php do_atomic( 'header' ); // my-life_header ?>
 
-			</header><!-- .wrap -->
+			</div><!-- .wrap -->
 
 			<?php do_atomic( 'close_header' ); // my-life_close_header ?>
 
-		</div><!-- #header -->
+		</header><!-- #header -->
 
 		<?php do_atomic( 'after_header' ); // my-life_after_header ?>
 
-		<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
+		<?php //get_search_form(); // Loads the search form. */ ?>
 
 		<?php if ( get_header_image() ) echo '<img class="header-image" src="' . get_header_image() . '" alt="" />'; ?>
 

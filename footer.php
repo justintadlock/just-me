@@ -33,6 +33,8 @@
 
 			<div class="wrap">
 
+				<?php get_template_part( 'menu', 'subsidiary' ); // Loads the menu-subsidiary.php template. ?>
+
 				<div class="footer-content">
 					<?php hybrid_footer_content(); ?>
 				</div><!-- .footer-content -->
@@ -46,8 +48,6 @@
 		</footer><!-- #footer -->
 
 		<?php do_atomic( 'after_footer' ); // my-life_after_footer ?>
-
-		<?php get_template_part( 'menu', 'subsidiary' ); // Loads the menu-subsidiary.php template. ?>
 
 	</div><!-- #container -->
 
